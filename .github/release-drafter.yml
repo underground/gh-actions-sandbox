@@ -45,26 +45,3 @@ template: |
   $CHANGES
 
   **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$NEXT_MINOR_VERSION
-
-autolabeler:
-  - label: enhancement
-    branch:
-      - '/^feat(ure)?[/-].+/'
-  - label: bug
-    branch:
-      - '/^fix[/-].+/'
-  - label: bug-high
-    branch:
-      - '/^hotfix[/-].+/'
-  - label: test
-    branch:
-      - '/^test[/-].+/'
-  - label: refactor
-    branch:
-      - '/^refactor[/-].+/'
-  - label: documentation
-    branch:
-      - '/^doc[/-].+/'
-  - label: 'developer experience'
-    branch:
-      - '/^chore[/-].+/'
