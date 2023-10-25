@@ -1,0 +1,70 @@
+name-template: 'v$RESOLVED_VERSION 🌈'
+tag-template: 'v$RESOLVED_VERSION'
+
+categories:
+  - title: '🎛 Home Controller'
+    label: 'home controller'
+  - title: '🚀 Features'
+    label: 'enhancement'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'bug'
+      - 'bug-high'
+      - 'a11y'
+  - title: '🔧 Refactoring'
+    label: 'refactor'
+  - title: '📖 Documentation'
+    label: 'documentation'
+  - title: '✅ Tests'
+    label: 'test'
+  - title: '🧰 Maintenance'
+    labels:
+      - 'dependencies'
+      - 'renovate'
+      - 'developer experience'
+
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+
+change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
+
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: patch
+
+template: |
+  ## Changes
+
+  $CHANGES
+
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$NEXT_MINOR_VERSION
+
+autolabeler:
+  - label: enhancement
+    branch:
+      - '/^feat(ure)?[/-].+/'
+  - label: bug
+    branch:
+      - '/^fix[/-].+/'
+  - label: bug-high
+    branch:
+      - '/^hotfix[/-].+/'
+  - label: test
+    branch:
+      - '/^test[/-].+/'
+  - label: refactor
+    branch:
+      - '/^refactor[/-].+/'
+  - label: documentation
+    branch:
+      - '/^doc[/-].+/'
+  - label: 'developer experience'
+    branch:
+      - '/^chore[/-].+/'
