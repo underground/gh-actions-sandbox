@@ -6,6 +6,10 @@ on:
       - main
       - develop
 
+permissions:
+  contents: write
+  pull-requests: read
+
 jobs:
   update-draft-release:
     if: github.ref == 'refs/heads/develop'
